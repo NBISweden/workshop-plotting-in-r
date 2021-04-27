@@ -21,6 +21,7 @@ library(dygraphs)
 library(networkD3)
 library(leaflet)
 library(crosstalk)
+library(formattable)
 ```
 
 All formatting covered under markdown is also applicable here.

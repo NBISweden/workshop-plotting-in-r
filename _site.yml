@@ -1,15 +1,15 @@
-name: workshop-template-rmd-ga
+name: workshop-ggplot
 # output directory used on gh-pages branch. format: YYMM
-output_dir: 2001
+output_dir: 2109
 # used site-wide wherever uppmax project ids are used
 uppmax_project: XXXXXXXX
 uppmax_res_1: XXXXXX
 # location options are linkoping, lund, umea or uppsala
-location: uppsala
+location: lund
 assistants:
- - "JD: John Doe"
- - "MS: Marta Skinner"
- - "DR: Daniel Russ"
+ - "LM: Lokesh Mano"
+ - "MR: Markus Rigner"
+ - "LV: Louella Vasquez"
 
 favicon: assets/favicon.png
 exclude: ["docs","README.md","schedule.csv","LICENSE","LICENSE.md","scripts","tmprepo"]
@@ -18,7 +18,7 @@ navbar:
   type: default
   logo:
     image: "assets/logo.svg"
-    href: https://royfrancis.github.io/workshop-template-rmd-travis
+    href: https://nbisweden.github.io/workshop-ggplot/
   right:
     - text: Home
       href: index.html

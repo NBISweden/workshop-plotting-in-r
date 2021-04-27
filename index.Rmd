@@ -19,17 +19,18 @@ output:
 
 <div class="col-md-12 flex-box">
 <p class="landing-title">
-<span style="display:block;">Rmarkdown website template</span>
-<span style="display:block;">for workshops</span>
+<span style="display:block;">Workshop on ggplot</span>
+<span style="display:block;"></span>
 </p>
 </div>
 
 <div class="col-md-12 flex-box">
 <p class="medium landing-bullets">
-<span style="display:block;">Run R scripts during build</span>
-<span style="display:block;">Bootstrap framework</span>
-<span style="display:block;">Icons from FontAwesome</span>
-<span style="display:block;">Auto rendering using GitHub Actions</span>
+<span style="display:block;">Data-formats for ggplot</span>
+<span style="display:block;">Basic grammar and aesthetics of ggplot</span>
+<span style="display:block;">PCA and heat-maps using R and ggplot</span>
+<span style="display:block;">Phylogenetic trees and merging data using ggtree</span>
+<span style="display:block;">Maps and data using ggmap and leaflet</span>
 </p>
 </div>
 
