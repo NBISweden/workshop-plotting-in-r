@@ -291,12 +291,13 @@ gheatmap(p, env_hmap, offset = 4, width=1.5,
 
 One can use [phylopic](http://phylopic.org/) database, which is part of the `ggtree` package to use many silhouette images of organisms. Here, we can see how one could add some of those images to a tree.
 
+```{r, eval=FALSE}
+if (!requireNamespace("ggimage", quietly = TRUE))
+    install.packages("ggimage", dependencies = TRUE )
+```
 
 
 ```{r, message=FALSE, warning=FALSE}
-
-if (!requireNamespace("ggimage", quietly = TRUE))
-    install.packages("ggimage", dependencies = TRUE )
 library(ggimage)
 p <- ggtree(arch_tree) + 
   geom_tiplab(aes(color=group)) +

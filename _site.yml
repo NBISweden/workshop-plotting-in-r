@@ -76,6 +76,7 @@ packages:
   - maps
   - mapdata
   - leaflet
+  - ggimage
  packages_bioc_student:
   - biomaRt
   - ggtree
