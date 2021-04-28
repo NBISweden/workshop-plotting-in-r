@@ -23,7 +23,7 @@ library(ggplot2)
 
 # Main exercises
 
-The following data will be used in the used for the exercises in this course. The data comes from a mock RNA sequencing data with 12 samples that are from cell-lines. As in any normal RNAseq analysis the counts of genes were normalized using different methods such as `VST` and `CPM` after filtering out the genes that were of very low expression. We would use these data for visulaizations. 
+The following data will be used in the used for the exercises in this course. The data comes from a mock RNA sequencing data with 12 samples that are from cell-lines. As in any normal RNAseq analysis the counts of genes were normalized using different methods such as `VST` and `CPM` after filtering out the genes that were of very low expression. We would use these data for visulaizations.
 
 **Download all of these files into your current working directory**
 
@@ -85,8 +85,5 @@ The data required for this part of the exercise can be downloaded from [here](da
 * Population statistics of the different countries in [2020](data/ggmap_data/world_population.tsv)
 * A small data frame of points from the [Sisquoc River](data/ggmap_data/sisquoc-points.txt)
 * GPS readings from a personal [run](data/ggmap_data/running.csv)
-
-```{r,echo=FALSE,child="assets/footer-lab.Rmd"}
-```
 
 ***
