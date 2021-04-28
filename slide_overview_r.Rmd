@@ -140,7 +140,7 @@ To merge two different tables to make a combined dataset where you have all the 
 --
 
 .pull-center[
-<img src="images/dplyr-joins.png" alt="drawing" width="400" height ="400"/>
+<img src="assets/images/dplyr-joins.png" alt="drawing" width="400" height ="400"/>
 ]
 
 ---

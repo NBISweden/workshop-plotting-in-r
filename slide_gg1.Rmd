@@ -61,7 +61,7 @@ name: gog
 ## Grammar of Graphics
 
 .pull-left-30[
-<img src="images/gog.png" alt="drawing" width="300"/>
+<img src="assets/images/gog.png" alt="drawing" width="300"/>
 ]
 
 --
