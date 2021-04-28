@@ -1,5 +1,7 @@
 ---
 title: "Download"
+subtitle: "Workshop-ggplot"
+author: "`r paste0('<b>NBIS</b> • ',format(Sys.time(), '%d-%b-%Y'))`"
 ---
 
 ```{r,child="assets/header-lab.Rmd"}
@@ -83,5 +85,8 @@ The data required for this part of the exercise can be downloaded from [here](da
 * Population statistics of the different countries in [2020](data/ggmap_data/world_population.tsv)
 * A small data frame of points from the [Sisquoc River](data/ggmap_data/sisquoc-points.txt)
 * GPS readings from a personal [run](data/ggmap_data/running.csv)
+
+```{r,echo=FALSE,child="assets/footer-lab.Rmd"}
+```
 
 ***

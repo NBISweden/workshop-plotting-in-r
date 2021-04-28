@@ -61,8 +61,22 @@ packages:
   - ggplot2
   - stringr
   - tidyr
+  - tidyverse
+  - ggmap
+  - pheatmap
+  - devtools
+  - cowplot
+  - reshape2
+  - wesanderson
+  - scales
+  - ggthemes
+  - ggrepel
+  - ggpubr
+  - gridExtra
  packages_bioc_student:
   - biomaRt
+  - ggtree
+  - treeio
  packages_github_student:
  packages_cran_repo:
   - bookdown
