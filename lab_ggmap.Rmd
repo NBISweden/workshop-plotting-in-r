@@ -69,7 +69,7 @@ Here we will see, how some of the traditional R packages `maps` and `mapdata` we
 
 Let us start with how to install these packages and look at their simple functions:
 
-```{r, message=FALSE, warning=FALSE}
+```{r, eval=FALSE}
 if (!requireNamespace("maps", quietly = TRUE)){
   install.packages("maps", dependencies = TRUE)
 }
@@ -78,6 +78,10 @@ if (!requireNamespace("mapdata", quietly = TRUE)){
   install.packages("mapdata", dependencies = TRUE)
 }
 
+```
+
+
+```{r, message=FALSE, warning=FALSE}
 library(maps)
 library(mapdata)
 library(ggplot2)
@@ -211,15 +215,20 @@ You can find more information about the R package [here](https://github.com/dkah
 * It also sets the axis scales, etc, in a nice way.
 * Once you have gotten your maps, you make a call with `ggmap()` much as you would with `ggplot()`
 
-Here we will try to see some of the important functions that this package provides and how we can use it display the findings in a nicer way.
+Here we will try to see some of the important functions that this package provides and how we can use it display the findings in a nicer way. 
+
+The `ggmap()` related tutorials are just shown how to do it without the actual plots! You need to register an API with google to be able to do this! and follow the instructions below: 
 
 ## Discrete data
 
-```{r, warning=FALSE, message=FALSE}
+```{r, eval=FALSE}
 if (!requireNamespace("ggmap", quietly = TRUE)){
   install.packages("ggmap", dependencies = TRUE)
 }
+register_google(<INSERT YOUR PERSONAL KEY HERE>)
+```
 
+```{r, warning=FALSE, message=FALSE}
 library(ggmap)
 sisquoc <- read.table("data/ggmap_data/sisquoc-points.txt", sep = "\t", header = TRUE)
 head(sisquoc)
@@ -232,7 +241,7 @@ Now that we have the zoom region we are after, we can get the map from "google" 
 
 <div class="instruction">
 
-<i class="fas fa-exclamation-circle"></i> Note &nbsp; To use Google maps, it is necessary to get an API key from google for your account and then register the API key in your R using the function `register_google()`
+<i class="fas fa-exclamation-circle"></i> Note &nbsp; To use Google maps, it is necessary to get an API key from [google](https://developers.google.com/maps/gmp-get-started) for your account and then register the API key in your R using the function `register_google()`
 
 </div>
 
@@ -308,7 +317,7 @@ This package gives you the map-data for Sweden like the one we had with the worl
 
 Let us take a quick look on how the `map_ln` data looks like:
 
-```{r, warning=FALSE, message=FALSE}
+```{r, eval=FALSE}
 if (!requireNamespace("devtools", quietly = TRUE)){
   install.packages("devtools", dependencies = TRUE)
 }
@@ -316,7 +325,10 @@ if (!requireNamespace("devtools", quietly = TRUE)){
 if (!requireNamespace("swemaps", quietly = TRUE)){
   devtools::install_github("reinholdsson/swemaps", dependencies = TRUE)
 }
+```
 
+
+```{r, warning=FALSE, message=FALSE}
 library(swemaps)
 head(map_ln)
 ```
@@ -382,11 +394,14 @@ Here I will show a quick demo of how to make interactive maps in R based on a pa
 
 There is quite a lot of things you can do with this! You can follow the tutorial [here](https://rstudio.github.io/leaflet/). But here I will show you some of the very simple things. 
 
-```{r, message=FALSE, warning=FALSE}
-
+```{r, eval=FALSE}
 if (!requireNamespace("leaflet", quietly = TRUE)){
   devtools::install_github("rstudio/leaflet", dependencies = TRUE)
 }
+```
+
+
+```{r, message=FALSE, warning=FALSE}
 library(leaflet)
 m <- leaflet() %>% setView(lng = 13.1914692, lat = 55.7040588, zoom = 12)
 m %>% addTiles()
