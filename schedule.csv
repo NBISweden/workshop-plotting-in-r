@@ -1,6 +1,6 @@
 date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_room
 08/09/2021;Online;09:00;09:15;Welcome;LM;;Intro_of_NBIS.pdf;;https://lu-se.zoom.us/j/9343880250
-;;09:15;10:00;R Introduction lecture;LM;MR,LV;;;
+;;09:15;10:00;R Introduction lecture;LM;;slide_r_intro.html;;
 ;;10:00;10:20;Coffee Break;;;;;
 ;;10:20;11:30;R Introduction Lab;LM;MR,LV;;;
 ;;11:30;12:00;Lecture on grammar, geoms, colors and aesthetics;LM;;;;
