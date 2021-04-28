@@ -67,7 +67,7 @@ name: demo
 --
 
 * Masks and social-distancing
-* Coffe and tea breaks in Ecology
+* Coffe and tea breaks
 * Webpage structure
 * Plots from drop-down
 * Times mentioned in schedule are **super** arbitrary
