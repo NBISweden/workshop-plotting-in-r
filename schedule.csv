@@ -14,11 +14,11 @@ date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_r
 09/09/2021;Online;09:00;09:15;Vector and bitmap images;MR;;Vector_Bitmap_Images.pdf;;https://lu-se.zoom.us/j/9343880250
 ;;09:30;10:00;Lab on combining plots;LM;MR,LV;slide_gg4.html;lab_gg4.html;
 ;;10:00;10:20;Coffee Break;;;;;
-;;10:20;10:40;Lecture on making PCA, heatmaps and others;MR;LM,LV;;;
-;;10:40;12:00;Lab on making PCA, heatmaps and others;MR;LM,LV;;;
+;;10:20;10:40;Lecture on making PCA, heatmaps and others;MR;;;;
+;;10:40;12:00;Lab on making PCA, heatmaps and others;MR;LM,LV;;lab_pca_hmap.html;
 ;;12:00;13:00;Lunch;;;;;
-;;13:00;14:00;Lab on phylogenetic tree (optional);LM;MR,LV;;;
-;;14:00;15:00;Lab on using maps on plots (optional);LM;MR,LV;;;
+;;13:00;14:00;Lab on phylogenetic tree (optional);LM;MR,LV;;lab_phylo.html;
+;;14:00;15:00;Lab on using maps on plots (optional);LM;MR,LV;;lab_ggmap.html;
 ;;15:00;15:20;Coffee Break;;;;;
 ;;15:20;16:40;Bring your own problem;LM,MR,LV;Everyone;;;
 ;;16:40;17:00;Closing and feedback session;LM,MR,LV;Everyone;;;
