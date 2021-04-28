@@ -82,8 +82,6 @@ count: false
 
 # Thank you. Questions?
 
-```{r,echo=FALSE,child="assets/footer-slide.Rmd"}
-```
 
 ```{r,include=FALSE,eval=FALSE}
 # manually run this to render this document to HTML
