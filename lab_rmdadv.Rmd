@@ -1,6 +1,6 @@
 ---
 title: "Advanced Rmarkdown"
-subtitle: "Workshop-Template-Rmd"
+subtitle: "Workshop-ggplot-Rmd"
 author: "`r paste0('<b>NBIS</b> • ',format(Sys.time(), '%d-%b-%Y'))`"
 ---
 

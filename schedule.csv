@@ -1,20 +1,24 @@
 date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_room
-13/05/2019;E10:1309;09:00;10:00;Welcome;Person A;Person K;slide_sample.html;;http://bit.ly/2UKjEoQ
-;;10:00;11:00;Markdown;Person A;;;lab_md.html;
-;;11:00;12:00;Rmarkdown;Person A;Person K;;lab_rmd.html;
+08/09/2021;Online;09:00;09:15;Welcome;LM;;Intro_of_NBIS.pdf;;https://lu-se.zoom.us/j/9343880250
+;;09:15;10:00;R Introduction lecture;LM;MR,LV;;;
+;;10:00;10:20;Coffee Break;;;;;
+;;10:20;11:30;R Introduction Lab;LM;MR,LV;;;
+;;11:30;12:00;Lecture on grammar, geoms, colors and aesthetics;LM;;;;
 ;;12:00;13:00;Lunch;;;;;
-;;13:00;14:00;Advanced Rmd;Person A;;;lab_rmdadv.html;
-;;14:00;16:00;This a looooooooooooooong topic title;Person A;;;;
-;;16:00;17:00;Topic D;Person A;;slide_uppmax.pdf;;
-14/05/2019;E10:1309;09:00;10:00;Topic;Person B;;;;
-;;10:00;11:00;Topic;Person B;Person K, Person L;;;
-;;11:00;12:00;Lunch;;;;;
-;;12:00;13:00;Topic;Person B;;;;
-;;13:00;14:00;Topic;Person B;;;;
-;;14:00;17:00;Topic;Person B;Person K, Person L;;;
-15/05/2019;E10:1309;09:00;10:00;Topic;Person C;;;;
-;;10:00;11:00;Topic;Person C;;;;
-;;11:00;12:00;Topic;Person C;;;;
+;;13:00;13:50;Lab on grammar, geoms, colors and aesthetics;LV;MR,LM;;;
+;;13:50;14:10;Lecture on facets, barplots and errorbars;LM;;;;
+;;14:10;15:00;Lab on facets, barplots and errorbars;LV;MR,LM;;;
+;;15:00;15:20;Coffee Break;;;;;
+;;15:20;15:40;Lecture on axes, labels, legends and themes;LM;;;;
+;;15:40;17:00;Lab on axes, labels, legends and themes;LM;MR,LV;;;
+09/09/2021;Online;09:00;09:15;Vector and bitmap images;MR;;Vector_Bitmap_Images.pdf;;https://lu-se.zoom.us/j/9343880250
+;;09:30;10:00;Lab on combining plots;LM;MR,LV;;;
+;;10:00;10:20;Coffee Break;;;;;
+;;10:20;10:40;Lecture on making PCA, heatmaps and others;MR;LM,LV;;;
+;;10:40;12:00;Lab on making PCA, heatmaps and others;MR;LM,LV;;;
 ;;12:00;13:00;Lunch;;;;;
-;;13:00;16:30;Topic;Person C;;;;
-;;16:30;17:00;Conclusion;Person C;;;;
+;;13:00;14:00;Lab on phylogenetic tree (optional);LM;MR,LV;;;
+;;14:00;15:00;Lab on using maps on plots (optional);LM;MR,LV;;;
+;;15:00;15:20;Coffee Break;;;;;
+;;15:20;16:40;Bring your own problem;LM,MR,LV;Everyone;;;
+;;16:40;17:00;Closing and feedback session;LM,MR,LV;Everyone;;;

@@ -1,6 +1,6 @@
 ---
 title: Markdown
-subtitle: "Workshop-Template-Rmd"
+subtitle: "Workshop-gggplot-Rmd"
 author: NBIS
 ---
 
