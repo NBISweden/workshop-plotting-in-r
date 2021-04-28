@@ -229,10 +229,6 @@ head(sisquoc)
 
 Now that we have the zoom region we are after, we can get the map from "google" using the `get_map()` function. Then plot the points on the river from the data using `geom_point()`
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-register_google("AIzaSyD6aGUalwolczAafxJ2XN2ZAIn5jX04Q9k")
-```
-
 
 <div class="instruction">
 

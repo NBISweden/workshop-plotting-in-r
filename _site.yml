@@ -73,11 +73,15 @@ packages:
   - ggrepel
   - ggpubr
   - gridExtra
+  - maps
+  - mapdata
+  - leaflet
  packages_bioc_student:
   - biomaRt
   - ggtree
   - treeio
  packages_github_student:
+  - reinholdsson/swemaps
  packages_cran_repo:
   - bookdown
   - captioner
@@ -88,7 +92,6 @@ packages:
   - highcharter
   - kableExtra
   - knitr
-  - leaflet
   - lubridate
   - markdown
   - pagedown
