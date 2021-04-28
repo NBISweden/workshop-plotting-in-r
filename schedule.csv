@@ -12,7 +12,7 @@ date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_r
 ;;15:20;15:40;Lecture on axes, labels, legends and themes;LM;;slide_gg3.html;;
 ;;15:40;17:00;Lab on axes, labels, legends and themes;LM;MR,LV;;lab_gg3.html;
 09/09/2021;Online;09:00;09:15;Vector and bitmap images;MR;;Vector_Bitmap_Images.pdf;;https://lu-se.zoom.us/j/9343880250
-;;09:30;10:00;Lab on combining plots;LM;MR,LV;;;
+;;09:30;10:00;Lab on combining plots;LM;MR,LV;slide_gg4.html;lab_gg4.html;
 ;;10:00;10:20;Coffee Break;;;;;
 ;;10:20;10:40;Lecture on making PCA, heatmaps and others;MR;LM,LV;;;
 ;;10:40;12:00;Lab on making PCA, heatmaps and others;MR;LM,LV;;;
