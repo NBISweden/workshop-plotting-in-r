@@ -1,6 +1,6 @@
 ---
-title: "Introduction to R"
-subtitle: "Workshop-ggplot"
+title: "ggplot Part II"
+subtitle: "Workshop on ggplot"
 author: "`r paste0('<b>Lokesh Mano</b> • ',format(Sys.time(), '%d-%b-%Y'))`"
 institute: NBIS, SciLifeLab
 keywords: bioinformatics, course, workshop, scilifelab, nbis
