@@ -82,7 +82,7 @@ class: spaced
 
 ## Building a graph
 
-<img src="images/gg-syntax.png" alt="drawing", width ="600"/>
+<img src="assets/images/gg-syntax.png" alt="drawing", width ="600"/>
 
 ---
 name: build-demo
@@ -169,7 +169,7 @@ class: spaced
 
 ## Geoms
 
-<img src="images/geoms.png" alt="drawing", width ="600"/>
+<img src="assets/images/geoms.png" alt="drawing", width ="600"/>
 
 --
 ```{r, eval=FALSE}
