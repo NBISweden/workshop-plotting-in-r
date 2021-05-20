@@ -18,7 +18,7 @@ navbar:
   type: default
   logo:
     image: "assets/logo.svg"
-    href: https://nbisweden.github.io/workshop-ggplot/
+    href: https://nbisweden.github.io/workshop-plotting-in-r/
   right:
     - text: Home
       href: index.html

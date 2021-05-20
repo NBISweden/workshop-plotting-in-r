@@ -1,13 +1,13 @@
 # workshop-ggplot [![gh-actions-build-status](https://github.com/royfrancis/workshop-template-rmd-ga/workflows/build/badge.svg)](https://github.com/NBISweden/workshop-ggplot/actions?workflow=build)
 
-This repo contains the course material for NBIS workshop **Workshop on ggplot**. The rendered view of this repo is available [here](https://nbisweden.github.io/workshop-ggplot/).
+This repo contains the course material for NBIS workshop **Workshop on ggplot**. The rendered view of this repo is available [here](https://nbisweden.github.io/workshop-plotting-in-r/).
 
 ## Contributing
 
 To add or update contents of this repo (for collaborators), first clone the repo.
 
 ```
-git clone https://github.com/nbisweden/workshop-ggplot.git
+git clone https://github.com/nbisweden/workshop-plotting-in-r.git
 ```
 
 Make changes/updates as needed. Add the changed files. Commit it. Then push the repo back.
