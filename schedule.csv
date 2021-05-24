@@ -20,16 +20,16 @@ date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_r
 ;;13:00;14:00;Lab on phylogenetic tree (optional);LM;MR,LV;;lab_phylo.html;
 ;;14:00;15:00;Lab on using maps on plots (optional);LM;MR,LV;;lab_ggmap.html;
 ;;15:00;15:20;Coffee Break;;;;;
-;;15:20;17:00;Bring your own problem;LM,MR,LV;Everyone;;;
+;;15:20;17:00;Bring your own data;LM,MR,LV;Everyone;;;
 10/09/2021;Online;09:00;09:30;Intro to R-Shiny apps;LM;;;;https://lu-se.zoom.us/j/9343880250
 ;;09:30;10:00;Intro lab on R-Shiny apps;LM;MR,LV;;;
 ;;10:00;10:20;Coffee Break;;;;;
-;;10:20;10:45;R-Shiny apps part-II lecture;LM;MR,LV;;;
+;;10:20;10:45;R-Shiny apps part-II lecture;LM;;;;
 ;;10:45;12:00;R-Shiny apps part-II lab;LM;MR,LV;;;
 ;;12:00;13:00;Lunch;;;;;
-;;13:00;13:30;R-Shiny apps part-III lecture;LM;MR,LV;;;
+;;13:00;13:30;R-Shiny apps part-III lecture;LM;;;;
 ;;13:30;15:00;R-Shiny apps part-III lab;LM;MR,LV;;;
 ;;15:00;15:20;Coffee Break;;;;;
 ;;15:20;15:40;Demo on hosting the R-Shiny app;LM;;;;
-;;15:40;16:40;Play-time with your own R-Shiny app;LM;;;;
+;;15:40;16:40;Play-time with your own R-Shiny app;LM,MR,LV;Everyone;;;
 ;;16:40;17:00;Closing and feedback session;LM,MR,LV;Everyone;;;

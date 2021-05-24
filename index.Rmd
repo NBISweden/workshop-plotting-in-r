@@ -26,11 +26,11 @@ output:
 
 <div class="col-md-12 flex-box">
 <p class="medium landing-bullets">
-<span style="display:block;">Data-formats for ggplot</span>
-<span style="display:block;">Basic grammar and aesthetics of ggplot</span>
-<span style="display:block;">PCA and heat-maps using R and ggplot</span>
-<span style="display:block;">Phylogenetic trees and merging data using ggtree</span>
-<span style="display:block;">Maps and data using ggmap and leaflet</span>
+<span style="display:block;">Ease of handling data in R for visualizations</span>
+<span style="display:block;">Apply the grammar efficiently in ggplot to get the desired plot</span>
+<span style="display:block;">Combine different data and/or different plots that are of publication-grade</span>
+<span style="display:block;">PCA, Heatmaps, Phylogenetic trees and Maps</span>
+<span style="display:block;">Simple Rshiny app: Genaration and deployment</span>
 </p>
 </div>
 
