@@ -28,7 +28,7 @@ output:
 <p class="medium landing-bullets">
 <span style="display:block;">Ease of handling data in R for visualizations</span>
 <span style="display:block;">Apply the grammar efficiently in ggplot to get the desired plot</span>
-<span style="display:block;">Combine different data and/or different plots that are of publication-grade</span>
+<span style="display:block;">Combine different data and/or different plots</span>
 <span style="display:block;">PCA, Heatmaps, Phylogenetic trees and Maps</span>
 <span style="display:block;">Simple Rshiny app: Genaration and deployment</span>
 </p>
