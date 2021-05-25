@@ -112,8 +112,10 @@ jobs:
           printf "<div style='display:block;'><p style='line-height:2;'>\n" >> index.md
           months=(Zero Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
           dirs=$(ls -d */ | sed 's/\///' | tac)
+          echo "Directories: $dirs"
           for i in $dirs
           do
+           echo "<span style='display:block;'><a href='https://${str_user}.github.io/${repo}/${i}/'>20${i:0:2} ${months[${i:(-2)}]}</a></span>"
            printf "<span style='display:block;'><a href='https://${str_user}.github.io/${repo}/${i}/'>20${i:0:2} ${months[${i:(-2)}]}</a></span>" >> index.md
           done
           printf "</p></div>" >> index.md

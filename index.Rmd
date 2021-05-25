@@ -19,7 +19,7 @@ output:
 
 <div class="col-md-12 flex-box">
 <p class="landing-title">
-<span style="display:block;">Workshop on ggplot</span>
+<span style="display:block;">Workshop on Plotting in R</span>
 <span style="display:block;"></span>
 </p>
 </div>
@@ -27,7 +27,7 @@ output:
 <div class="col-md-12 flex-box">
 <p class="medium landing-bullets">
 <span style="display:block;">Handle data in R for visualizations</span>
-<span style="display:block;">Apply ggplot grammar efficiently to get publication-grade plot</span>
+<span style="display:block;">Apply ggplot grammar to get publication-grade plots</span>
 <span style="display:block;">Combine different data and/or different plots</span>
 <span style="display:block;">PCA, Heatmaps, Phylogenetic trees and Maps</span>
 <span style="display:block;">Write and deploy your own Rshiny app</span>

@@ -1,4 +1,4 @@
-name: workshop-ggplot
+name: workshop-plotting-in-r
 # output directory used on gh-pages branch. format: YYMM
 output_dir: 2109
 # used site-wide wherever uppmax project ids are used
