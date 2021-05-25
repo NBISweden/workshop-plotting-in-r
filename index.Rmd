@@ -26,11 +26,11 @@ output:
 
 <div class="col-md-12 flex-box">
 <p class="medium landing-bullets">
-<span style="display:block;">Ease of handling data in R for visualizations</span>
-<span style="display:block;">Apply the grammar efficiently in ggplot to get the desired plot</span>
+<span style="display:block;">Handle data in R for visualizations</span>
+<span style="display:block;">Apply the ggplot grammar efficiently to get publication-grade plot</span>
 <span style="display:block;">Combine different data and/or different plots</span>
 <span style="display:block;">PCA, Heatmaps, Phylogenetic trees and Maps</span>
-<span style="display:block;">Simple Rshiny app: Genaration and deployment</span>
+<span style="display:block;">Write and deploy your own Rshiny app</span>
 </p>
 </div>
 
