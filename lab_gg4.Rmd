@@ -1,6 +1,6 @@
 ---
 title: "ggplot: Part IV"
-subtitle: "Workshop on ggplot"
+subtitle: "Workshop on Plotting in R"
 author: "`r paste0('<b>Lokesh Mano</b> • ',format(Sys.time(), '%d-%b-%Y'))`"
 ---
 
