@@ -347,14 +347,13 @@ name: server-3
 
 **Rule 3:** Use input values with `input$`
 
-.pull-left-40[
+
 <img src="assets/images/shiny-input.png" style="width: 80%;" />
-]
+
 --
 
-.pull-right-40[
 <img src="assets/images/shiny-input2.png" style="width: 80%;" />
-]
+
 ---
 
 name: end_slide
