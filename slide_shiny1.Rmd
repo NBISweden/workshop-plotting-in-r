@@ -90,7 +90,6 @@ class: spaced
 * UI Outputs
 * Renderer
 * Builder
-* [Function reference](https://shiny.rstudio.com/reference/shiny)
 
 ---
 name: code-structure
@@ -129,9 +128,9 @@ server <- function(input,output) {}
 
 ---
 
-name: running
+name: execute
 
-## Running the app
+## App execution
 
 * Change to app directory, then run `runApp()`
 * Use `shinyApp()`
