@@ -21,7 +21,7 @@ date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_r
 ;;14:00;15:00;Lab on using maps on plots (optional);LM;MR,LV;;lab_ggmap.html;
 ;;15:00;15:20;Coffee Break;;;;;
 ;;15:20;17:00;Bring your own data;LM,MR,LV;Everyone;;;
-10/09/2021;Online;09:00;09:30;Intro to R-Shiny apps;LM;;;;https://lu-se.zoom.us/j/9343880250
+10/09/2021;Online;09:00;09:30;Intro to R-Shiny apps;LM;slide_shiny1.html;;;https://lu-se.zoom.us/j/9343880250
 ;;09:30;10:00;Intro lab on R-Shiny apps;LM;MR,LV;;;
 ;;10:00;10:20;Coffee Break;;;;;
 ;;10:20;10:45;R-Shiny apps part-II lecture;LM;;;;
