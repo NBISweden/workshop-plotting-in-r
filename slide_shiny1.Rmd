@@ -347,6 +347,7 @@ name: server-3
 
 **Rule 3:** Use input values with `input$`
 
+--
 
 <img src="assets/images/shiny-input.png" style="width: 80%;" />
 
