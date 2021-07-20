@@ -59,7 +59,7 @@ class: spaced
 name: intro
 
 .size-95[
-<img src="assets/images/shiny_gallery.png" alt="drawing" width="300"/>
+<img src="assets/images/shiny_gallery.png" alt="drawing" width="800"/>
 ](https://shiny.rstudio.com/gallery/)
 
 ---
