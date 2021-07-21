@@ -2,20 +2,6 @@
 title: "RShiny Lab: Part I"
 subtitle: "Workshop on Plotting in R"
 author: "`r paste0('<b>Lokesh Mano</b> • ',format(Sys.time(), '%d-%b-%Y'))`"
-output:
-  bookdown::html_document2:
-    toc: true
-    toc_float: true
-    toc_depth: 3
-    number_sections: true
-    theme: united
-    highlight: textmate
-    df_print: default
-    code_folding: none
-    self_contained: false
-    keep_md: false
-    encoding: "UTF-8"
-    css: ["assets/lab.css"]
 ---
 
 ```{r, include=FALSE}
