@@ -1,0 +1,69 @@
+---
+title: "RShiny Lab: Part II"
+subtitle: "Workshop on Plotting in R"
+author: "`r paste0('<b>Lokesh Mano</b> • ',format(Sys.time(), '%d-%b-%Y'))`"
+---
+
+```{r, include=FALSE}
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details><summary>", type, "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+```
+
+```{r,echo=FALSE,child="assets/header-lab.Rmd"}
+```
+
+<!-- ------------ Only edit title, subtitle & author above this ------------ -->
+
+```{r,echo=FALSE,results='hide',warning=FALSE,message=FALSE}
+library(shiny)
+library(ggplot2)
+```
+
+
+# Updating widgets
+
+Widgets can be updated with new values dynamically. `observe()` and `observeEvent()` functions can monitor the values of interest and update relevant widgets.
+
+```{r}
+shinyApp(
+ui=fluidPage(
+  selectInput("data_input",label="Select data",choices=c("mtcars","faithful","iris")),
+  selectInput("header_input",label="Select column name",choices=NULL),
+  plotOutput("plot_output",width="400px")
+),
+server=function(input,output,session) {
+  getdata <- reactive({ get(input$data_input, 'package:datasets') })
+  
+  observe({
+    updateSelectInput(session,"header_input",label="Select column name",choices=colnames(getdata()))
+  })
+  
+  output$plot_output <- renderPlot({
+    #shiny::req(input$header_input)
+    #validate(need(input$header_input %in% colnames(getdata()),message="Incorrect column name."))
+    hist(getdata()[, input$header_input],xlab=input$header_input,main=input$data_input)
+  })
+},
+options=list(height=600))
+```
+
+In this example, the user selects a dataset and a column from the selected dataset to be plotted as a histogram. The column name selection widget must automatically update it's choices depending on the selected dataset. This achieved using `observe()` where the `updateSelectInput()` function updates the selection choices. Notice that a third option `session` is in use in the server function. ie; `server=function(input,output,session)`. And `session` is also the first argument in `updateSelectInput()`. Session keeps track of values in the current session.
+
+When changing the datasets, we can see that there is a short red error message. This is because, after we have selected a new dataset, the old column name from the previous dataset is searched for in the new dataset. This occurs for a short time and causes the error. This can be fixed using careful error handling. We will discuss this in another section.

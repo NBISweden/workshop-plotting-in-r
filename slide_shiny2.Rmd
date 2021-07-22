@@ -48,6 +48,65 @@ class: spaced
 
 ## Contents
 
+* [Reactivity](#react)
+* [Updating Widgets](#widget)
+* [Error Validation](#error)
+* [Isolate reactivity](#isolate)
+* [Download Button](#download)
+
+---
+name: react
+
+## Reactivity
+
+.size-95[
+<img src="assets/images/react-code1.png" alt="drawing" width="800"/>
+]
+
+---
+name: react1
+
+## Reactivity
+
+.size-95[
+<img src="assets/images/react-code2.png" alt="drawing" width="800"/>
+]
+
+---
+name: react2
+
+## Reactivity
+
+.size-95[
+<img src="assets/images/react-code3.png" alt="drawing" width="800"/>
+]
+
+---
+name: react3
+
+## Reactivity
+
+.size-95[
+<img src="assets/images/react-code4.png" alt="drawing" width="800"/>
+]
+
+---
+name: react4
+
+## Reactivity
+
+.size-95[
+<img src="assets/images/react5.png" alt="drawing" width="800"/>
+]
+
+---
+name: react5
+
+## Reactivity
+
+.size-95[
+<img src="assets/images/react6.png" alt="drawing" width="800"/>
+]
 
 ---
 
