@@ -147,7 +147,7 @@ name:isolate4
 ## Isolate reactivity
 
 .size-95[
-<img src="assets/images/isolate4.png" alt="drawing" width="500"/>
+<img src="assets/images/isolate4.png" alt="drawing" width="800"/>
 ]
 
 ---
