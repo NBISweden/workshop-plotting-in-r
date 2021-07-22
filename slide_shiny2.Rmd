@@ -115,7 +115,9 @@ name: isolate
 ## Isolate reactivity
 
 * Reactivity can be controlled.
+
 --
+
 * You will notice that as soon as you try to change the title the histogram will update with new values
 
 .size-95[
