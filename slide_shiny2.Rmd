@@ -50,6 +50,7 @@ class: spaced
 
 * [Reactivity](#react)
 * [Isolate reactivity](#isolate)
+* [observeEvent()](#observe)
 * [Updating Widgets](#updating)
 * [Error Validation](#error)
 * [Download Button](#download)
@@ -143,12 +144,20 @@ name:isolate4
 
 ## Isolate reactivity
 
-.size-45[
+.size-95[
 <img src="assets/images/isolate4.png" alt="drawing" width="500"/>
 ]
 
 ---
+name:observe
 
+## observeEvent()
+
+.size-95[
+<img src="assets/images/observe.png" alt="drawing" width="500"/>
+]
+
+---
 name: updating
 
 ## Updating widgets
@@ -188,6 +197,160 @@ server=function(input,output,session) {
   })
 }
 ```
+
+---
+name: error
+
+## Error validation
+
+* Shiny returns an error with missing or incorrect values
+
+.pull-left-70[.limity100[
+```{r,eval=FALSE}
+shinyApp(
+ui=fluidPage(
+  selectInput("data_input",label="Select data",
+              choices=c("","mtcars","faithful","iris")),
+  tableOutput("table_output")
+),
+server=function(input, output) {
+  getdata <- reactive({ get(input$data_input,'package:datasets') })
+  output$table_output <- renderTable({head(getdata())})
+})
+```
+]]
+
+.pull-right-30[
+![](assets/images/val1.png)
+]
+
+--
+
+* Errors can be handled in a controlled manner
+
+--
+
+* `validate()` can be used to check input
+* `validate()` using `need()`
+
+.pull-left-70[.limity100[
+```
+shinyApp(
+ui=fluidPage(
+  selectInput("data_input",label="Select data",
+              choices=c("","mtcars","faithful","iris")),
+  tableOutput("table_output")
+),
+server=function(input, output) {
+  getdata <- reactive({ 
+  validate(need(try(input$data_input),"Please select a data set"))
+    get(input$data_input,'package:datasets') 
+    })
+  output$table_output <- renderTable({head(getdata())})
+})
+```
+]]
+
+.pull-right-30[
+![](assets/images/val2.png)
+]
+
+--
+
+* `validate()` using custom function
+
+.pull-left-70[.limity100[
+```
+valfn <- function(x) if(is.null(x) | is.na(x) | x=="") return("Input data is incorrect.")
+shinyApp(
+ui=fluidPage(
+  selectInput("data_input",label="Select data",
+              choices=c("","mtcars","faithful","iris")),
+  tableOutput("table_output")
+),
+server=function(input,output) {
+  getdata <- reactive({ 
+  validate(valfn(try(input$data_input)))
+    get(input$data_input,'package:datasets')
+    })
+  output$table_output <- renderTable({head(getdata())})
+})
+```
+]]
+
+.pull-right-30[
+![](assets/images/val3.png)
+]
+
+--
+
+* `shiny::req()` checks input variable and silently stops execution
+
+---
+name: download
+
+## Download • Data
+
+* Add button and `downloadHandler()` function
+
+```
+shinyApp(
+ui=fluidPage(
+  selectInput("data_input",label="Select data",
+              choices=c("mtcars","faithful","iris")),
+  textOutput("text_output"),
+  downloadButton("button_download","Download")
+),
+server=function(input, output) {
+  getdata <- reactive({ get(input$data_input, 'package:datasets') })
+  output$text_output <- renderText(paste0("Selected dataset: ",input$data_input))
+  
+  output$button_download <- downloadHandler(
+  filename = function() {
+     paste0(input$data_input,".csv")
+   },
+  content = function(file) {
+     write.csv(getdata(),file,row.names=FALSE,quote=F)
+   })
+})
+```
+
+* Run in system browser if Rstudio browser doesn't work
+* See usage of download buttons
+
+---
+name: download-plot
+
+## Download • Plots
+
+```
+shinyApp(
+ui=fluidPage(
+  selectInput("data_input",label="Select data",
+              choices=c("mtcars","faithful","iris")),
+  textOutput("text_output"),
+  plotOutput("plot_output",width="400px"),
+  downloadButton("button_download", "Download")
+),
+server=function(input, output) {
+  getdata <- reactive({ get(input$data_input, 'package:datasets') })
+  output$text_output <- renderText(paste0("Selected dataset: ",input$data_input))
+  output$plot_output <- renderPlot({hist(getdata()[, 1])})
+  
+output$button_download <- downloadHandler(
+  filename = function() {
+    paste0(input$data_input,".png")
+  },
+  content = function(file) {
+    png(file)
+    hist(getdata()[, 1])
+    dev.off()
+  })
+})
+```
+
+* Run in system browser if Rstudio browser doesn't work
+* See usage of download buttons
 
 ---
 
