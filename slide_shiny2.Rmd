@@ -49,9 +49,9 @@ class: spaced
 ## Contents
 
 * [Reactivity](#react)
-* [Updating Widgets](#widget)
-* [Error Validation](#error)
 * [Isolate reactivity](#isolate)
+* [Updating Widgets](#updating)
+* [Error Validation](#error)
 * [Download Button](#download)
 
 ---
@@ -109,6 +109,88 @@ name: react5
 ]
 
 ---
+name: isolate
+
+## Isolate reactivity
+
+* Reactivity can be controlled.
+--
+* You will notice that as soon as you try to change the title the histogram will update with new values
+
+.size-95[
+<img src="assets/images/isolate1.png" alt="drawing" width="800"/>
+]
+---
+
+name: isolate2
+
+## Isolate reactivity
+
+.size-95[
+<img src="assets/images/isolate2.png" alt="drawing" width="800"/>
+]
+---
+name: isolate3
+
+## Isolate reactivity
+
+.size-95[
+<img src="assets/images/isolate3.png" alt="drawing" width="800"/>
+]
+
+---
+name:isolate4
+
+## Isolate reactivity
+
+.size-45[
+<img src="assets/images/isolate4.png" alt="drawing" width="500"/>
+]
+
+---
+
+name: updating
+
+## Updating widgets
+
+* Widgets can be updated once initialised.
+* Add third argument **session** to server function
+
+```
+server=function(input,output,session) {}
+```
+
+--
+
+* Example of a typical UI
+
+```
+ui=fluidPage(
+  selectInput("select-input",label="selectInput",choices=c("A","B","C")),
+  numericInput("numeric-input",label="numericInput",value=5,min=1,max=10),
+  sliderInput("slider-input",label="sliderInput",value=5,min=1,max=10),
+)
+```
+
+--
+
+* Update functions can be used to update input widgets
+* Reactive observer `observe({})` monitors for a conditional change
+
+```
+server=function(input,output,session) {
+  observe({
+    if(something) {
+      updateSelectInput(session,"select-input",label="selectInput",choices=c("D","E","F"))
+      updateNumericInput(session,"numeric-input",label="numericInput",value=10,min=1,max=10)
+      updateSliderInput(session,"slider-input",label="sliderInput",value=8,min=1,max=10)
+    }
+  })
+}
+```
+
+---
+
 
 name: end_slide
 class: end-slide, middle
