@@ -139,6 +139,35 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
+# eventReactive()
+
+This is similar to the `observeEvent()`, where it is used to send message like logs when you click on a button.
+In the following example, we will see how to use `eventReactive()` with an action button and when you press it, the random numbers are only generated then. You can think of it as an `update` button. Let us look at the example below:
+
+```{r}
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Choose a number", 
+    value = 25, min = 1, max = 100),
+  textInput(inputId = "title", 
+    label = "Write a title",
+    value = "Histogram of Random Normal Values"),
+  plotOutput("hist"),
+  actionButton(inputId = "click", label = "Update")
+)
+
+server <- function(input, output) {
+  randomVals <- eventReactive(input$click, {
+    rnorm(input$num)
+  })
+  output$hist <- renderPlot({
+    hist(randomVals(), title = input$title)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
 
 # Updating widgets
 
