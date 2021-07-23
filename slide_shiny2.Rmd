@@ -118,7 +118,7 @@ name: isolate
 
 --
 
-* You will notice that as soon as you try to change the title the histogram will update with new values
+* You will notice that as soon as you try to change the title, the histogram will update with new values
 
 .size-95[
 <img src="assets/images/isolate1.png" alt="drawing" width="800"/>

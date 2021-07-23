@@ -36,6 +36,109 @@ library(shiny)
 library(ggplot2)
 ```
 
+# Reactivity
+
+We will here first look into the example of what the automatic reactivity of Rshiny looks like. The reactive functions like `renderPlot()` and `renderPrint()` are always looking for any changes in the input values and are updated quickly! Although this is super handy for any app, sometimes this can lead to unwanted confusion. Like, take the R function `rnorm()`, this function basically spits out random numbers. If you use this function in an app, everytime this function is called, it will output different random number sets. This can cause problems like in the example below:
+
+<i class="fas fa-clipboard-list"></i> Task &nbsp;  Try to change the slider input values and check if the `summary` and `hist` match with each other?
+
+```{r}
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Choose a number", 
+    value = 25, min = 1, max = 100),
+  plotOutput("hist"),
+  verbatimTextOutput("stats")
+)
+
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    hist(rnorm(input$num))
+  })
+  output$stats <- renderPrint({
+    summary(rnorm(input$num))
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+So, in order to make it consistent, we have to use the `rnorm()` only once and save it as a `reactive function` and then apply it to both the `hist()` and `summary()`. We do this by using `reactive()` function to store it as a variable. See the example below:
+
+```{r}
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Choose a number", 
+    value = 25, min = 1, max = 100),
+  plotOutput("hist"),
+  verbatimTextOutput("stats")
+)
+
+server <- function(input, output) {
+  
+  data <- reactive({
+    rnorm(input$num)
+  })
+  
+  output$hist <- renderPlot({
+    hist(data())
+  })
+  output$stats <- renderPrint({
+    summary(data())
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+<i class="fas fa-exclamation-circle"></i> Note &nbsp; As the `data` variable we have in the example above is a reactive function, you have to remember to use `()` whenever you call that particular variable.
+
+# Isolating reactivity
+
+In the same manner as above, sometimes you will notice that the Rshiny's reactivity can be very quick! Take the below example and try to type in the title of the histogram slowly. You will notice that the histogram will keep changing as you type, because the `rnorm()` gets updated constantly as you type!
+
+```{r}
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Choose a number", 
+    value = 25, min = 1, max = 100),
+  textInput(inputId = "title", 
+    label = "Write a title",
+    value = "Histogram of Random Normal Values"),
+  plotOutput("hist")
+)
+
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    hist(rnorm(input$num), main = input$title)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+By using the `isolate()` function, we can make certain UI input components to not react for changes! This means you can change/decide the title of the plot first and then you can change the slider in the example above to decide on the histogram you want for a particular value!
+
+```{r}
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Choose a number", 
+    value = 25, min = 1, max = 100),
+  textInput(inputId = "title", 
+    label = "Write a title",
+    value = "Histogram of Random Normal Values"),
+  plotOutput("hist")
+)
+
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    hist(rnorm(input$num), main = isolate(input$title))
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
 
 # Updating widgets
 
