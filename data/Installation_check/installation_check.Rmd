@@ -18,7 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 x <- c("ggplot2","tidyverse","ggmap","pheatmap","devtools","cowplot",
        "reshape2", "dplyr", "wesanderson", "scales", "ggthemes", "ggrepel", 
-       "ggpubr", "gridExtra", "ggtree", "treeio", "shiny", "gganimate")
+       "ggpubr", "gridExtra", "ggtree", "treeio", "shiny", "gganimate", "shinythemes",
+       "rsconnect")
 for (i in x){
  library(i, character.only = TRUE)
 }
