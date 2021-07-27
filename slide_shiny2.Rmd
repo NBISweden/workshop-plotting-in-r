@@ -54,6 +54,7 @@ class: spaced
 * [Updating Widgets](#updating)
 * [Error Validation](#error)
 * [Download Button](#download)
+* [Modularizing reactivity](#module)
 
 ---
 name: react
@@ -356,6 +357,15 @@ output$button_download <- downloadHandler(
 
 ---
 
+name: module
+
+## Modularizing Reactivity
+
+.size-95[
+<img src="assets/images/shiny-mod.png" alt="drawing" width="800"/>
+]
+
+---
 
 name: end_slide
 class: end-slide, middle

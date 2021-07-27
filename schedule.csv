@@ -27,8 +27,7 @@ date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_r
 ;;10:20;10:45;R-Shiny apps part-II lecture;LM;;slide_shiny2.html;;
 ;;10:45;12:00;R-Shiny apps part-II lab;LM;MR,LV;;lab_shiny2.html;
 ;;12:00;13:00;Lunch;;;;;
-;;13:00;13:30;R-Shiny apps part-III lecture;LM;;;;
-;;13:30;15:00;R-Shiny apps part-III lab;LM;MR,LV;;;
+;;13:00;15:00;R-Shiny apps part-III lab;LM;MR,LV;;lab_shiny3.html;
 ;;15:00;15:20;Coffee Break;;;;;
 ;;15:20;15:40;Demo on hosting the R-Shiny app;LM;;;;
 ;;15:40;16:40;Play-time with your own R-Shiny app;LM,MR,LV;Everyone;;;
