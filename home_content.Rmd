@@ -118,6 +118,28 @@ Here I have compiled all the solutions for the different exercises in each of th
 
 [<i class="fas fa-link"></i> <span class="large">Solutions</span>](solutions.html)
 
+# Rshiny
+
+This part contains all the labs and details to learn to make a simple Rshiny app.
+
+## Rshiny Intro
+
+This section contains the very simple terms of what an Rshiny app is and it's main components.
+
+[<i class="fas fa-link"></i> <span class="large">Rshiny Intro</span>](lab_shiny1.html)
+
+## Rshiny modules
+
+This section contains explanations and tutorials of some of the functions to modularize the Rshiny app's function in general.
+
+[<i class="fas fa-link"></i> <span class="large">Modularizing Rshiny</span>](lab_shiny2.html)
+
+## A simple app
+
+This section basically contains how to go about starting and making a simple Rshiny app.
+
+[<i class="fas fa-link"></i> <span class="large">A simple app</span>](lab_shiny3.html)
+
 # Extra Tutorial for ggplot
 
 In the following link, you can find several different ways to use `ggplot` and obtain incredible visualizations of the data. Depending on the kind of data you have and the kind of visualization you would like to see, you can follow it on the table contents in this following page:
