@@ -534,6 +534,145 @@ shinyApp(
 
 Now let us make these plots look a little bit more prettier!
 
+```{r, eval=FALSE}
+p1 <- subset_covdata %>%
+                ggplot(aes(x= date, y=new_cases_per_million, group = location, color = location)) +
+                geom_line(show.legend = F) +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), axis.title.x = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "New cases per million")
+            
+            
+            output$casesPlot <- renderPlot({p1})
+            
+            p2 <- subset_covdata %>%
+                ggplot(aes(x= date, y=icu_patients_per_million, group = location, color = location)) +
+                geom_line() +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), axis.title.x = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "ICU admissions per million")
+            
+            output$hospitalPlot <- renderPlot({p2})
+            
+            p3 <- subset_covdata %>%
+                ggplot(aes(x= date, y=new_deaths_per_million, group = location, color = location)) +
+                geom_line(show.legend = F) +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "Fatalities per million")
+            
+            output$fatalPlot <- renderPlot({p3})
+            
+            p4 <- subset_covdata %>%
+                ggplot(aes(x= date, y=people_vaccinated_per_hundred, group = location, color = location)) +
+                geom_line() +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "Percent vaccinated")
+            
+            output$vaccinePlot <- renderPlot({p4})
+```
+
+### Downloading
+
+Now let us look into the last part of the app, which is to download these plots together in a PDF document. For this we use the function `downloadHandler()`.
+
+```{r, eval=FALSE}
+
+server=function(input,output){
+        
+        observeEvent(input$click, {
+            output$error_country <- renderText({
+                shiny::validate(
+                    shiny::need(input$countries != '', 'You must select at-least one country'
+                    )
+                )
+            })
+            output$error_duration <- renderText({
+                shiny::validate(
+                    shiny::need(input$in_duration_date_start > as.Date('2020-02-14') & input$in_duration_date_end > as.Date('2020-02-14') & input$in_duration_date_start < as.Date('2021-07-26') & input$in_duration_date_end < as.Date('2021-07-26'), 
+                                'You must select the duration between 2020-02-15 and 2021-07-25'
+                    )
+                )
+            })
+            shiny::req(input$countries)
+            
+            subset_covdata <- cov_data %>%
+                filter(location %in% input$countries) %>%
+                filter(date >= input$in_duration_date_start) %>%
+                filter(date <= input$in_duration_date_end)
+            
+            p1 <- subset_covdata %>%
+                ggplot(aes(x= date, y=new_cases_per_million, group = location, color = location)) +
+                geom_line(show.legend = F) +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), axis.title.x = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "New cases per million")
+            
+            
+            output$casesPlot <- renderPlot({p1})
+            
+            p2 <- subset_covdata %>%
+                ggplot(aes(x= date, y=icu_patients_per_million, group = location, color = location)) +
+                geom_line() +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), axis.title.x = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "ICU admissions per million")
+            
+            output$hospitalPlot <- renderPlot({p2})
+            
+            p3 <- subset_covdata %>%
+                ggplot(aes(x= date, y=new_deaths_per_million, group = location, color = location)) +
+                geom_line(show.legend = F) +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "Fatalities per million")
+            
+            output$fatalPlot <- renderPlot({p3})
+            
+            p4 <- subset_covdata %>%
+                ggplot(aes(x= date, y=people_vaccinated_per_hundred, group = location, color = location)) +
+                geom_line() +
+                theme_bw(base_size = 16) +
+                scale_x_date(date_labels = "%b-%Y") +
+                xlab(label = "Time-Line") +
+                theme(axis.title.y = element_blank(), legend.title = element_blank()) +
+                ggtitle(label = "Percent vaccinated")
+            
+            output$vaccinePlot <- renderPlot({p4})
+            
+            output$download <- downloadHandler(
+                filename ="Personal_covdata.pdf",
+                content = function(file){
+                    pdf(NULL)
+                    #plot_grid(p1, p2, p3, p4, nrow = 2)
+                    ggsave(file, plot=plot_grid(p1, p2, p3, p4, nrow = 2), dpi = 300, width = 10, height = 8, units = "in")
+                }
+            )
+            
+        })
+        
+
+        
+}
+
+```
+
+
 
 
 
