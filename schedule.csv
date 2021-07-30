@@ -29,6 +29,6 @@ date;room;start_time;end_time;topic;teacher;assistant;link_slide;link_lab;link_r
 ;;12:00;13:00;Lunch;;;;;
 ;;13:00;15:00;R-Shiny apps part-III lab;LM;MR,LV;;lab_shiny3.html;
 ;;15:00;15:20;Coffee Break;;;;;
-;;15:20;15:40;Demo on hosting the R-Shiny app;LM;;;;
+;;15:20;15:40;Demo on hosting the R-Shiny app;LM;;slide_shiny3.html;;
 ;;15:40;16:40;Play-time with your own R-Shiny app;LM,MR,LV;Everyone;;;
 ;;16:40;17:00;Closing and feedback session;LM,MR,LV;Everyone;;;

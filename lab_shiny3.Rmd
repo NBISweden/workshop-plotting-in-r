@@ -665,12 +665,19 @@ server=function(input,output){
             )
             
         })
-        
-
-        
 }
 
 ```
+
+<i class="fas fa-exclamation-circle"></i> Notice that the `downloadHandler()` is inside the `observeEvent()`, so that the values and the plots can be accessed smoothly! Here, I also show an example of how you can use `ggsave()` and `plot_grid()` within the download handler. 
+
+# Session info
+
+```{r, fold.output=FALSE, fold.plot=FALSE}
+sessionInfo()
+```
+
+***
 
 
 
