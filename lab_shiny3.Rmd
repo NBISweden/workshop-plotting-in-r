@@ -72,7 +72,7 @@ In the following steps, we will try to make an app that is basically on the data
 
 Below is the quick view of the app that we are aiming to achieve:
 
-**Add the preview image here**
+Task for Lokesh: **Add the preview image here**
 
 [5]:https://ourworldindata.org/covid-vaccinations
 
@@ -85,7 +85,7 @@ cov_data <- read.table("data/shiny_app_data.csv", sep = ",", header = T)
 head(cov_data)
 ```
 
-It is a simple comma-separated file with 6 columns: `location`, `date`, `new_cases_per_million`, `new_deaths_per_million`, `icu_patients_per_million` and `people_vaccinated_per_hundred`. Now, the idea is that we will use the first two columns as input values where user can choose the countries and the date range for which they would like to see how the pandemic was and then we make the four plots accordingly! For making these animated plots in the app, we would need the following packages: `shiny`, `gganimate`, `colourpicker` and `shinythemes`.
+It is a simple comma-separated file with 6 columns: `location`, `date`, `new_cases_per_million`, `new_deaths_per_million`, `icu_patients_per_million` and `people_vaccinated_per_hundred`. Now, the idea is that we will use the first two columns as input values where user can choose the countries and the date range for which they would like to see how the pandemic was and then we make the four plots accordingly! For making these animated plots in the app, we would need the following packages: `shiny`, `gganimate` and `shinythemes`.
 
 # Example plot
 
@@ -112,7 +112,7 @@ Now, let us go ahead and start building the app!
 ## Layout
 We need to first have a plan for the app page, which UI elements to include and how they will be laid out and structured. My plan is as shown in the preview image.
 
-**Add the preview image here**
+Task for Lokesh: **Add the preview image here**
 
 There is a horizontal top bar for the title and two columns below. The left column will contain the input widgets and control. The right column will contain the plot output. Since, this is a commonly used layout, it is available as a predefined function in shiny called `pageWithSidebar()`. It takes three arguments `headerPanel`, `sidebarPanel` and `mainPanel` which is self explanatory.
 
@@ -130,7 +130,146 @@ server=function(input,output){}
 
 ## UI
 
-Then we fill in the panels with widgets and contents.
+Then we fill in the panels with widgets and contents. The way I planned this app is to have two in put values from user which are the countries to visualize and the duration, as I mentioned earlier. In addition I would also like to have the `Update` button to control the `reactivity` of the plots as we have learnt in the earlier session. So, the plots should update only when the `Update` button is pressed. I would also like to give the user the option to download these animated plots as `gif` image. 
+
+Let us start with including the countries as a `checkboxGroupInput()` input widget. It is self-explanatory that the countries you choose in this group can be accessed in the `server()` to subset the data just for these countries. The function comes with its own header `label`, followed by `choices` and you can use `selected` to have the default choice. 
+
+```{r, eval=FALSE}
+shinyApp(
+    ui=fluidPage(
+        pageWithSidebar(
+            headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
+            sidebarPanel(
+                checkboxGroupInput("countries", label = h3("Countries"), 
+                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
+                                   selected = 1),
+            ),
+            mainPanel())
+    ),
+    server=function(input,output){}
+)
+```
+
+![](assets/images/shiny-cov-sidebar1.png)
+
+Now that we got the countries-input sorted out, let us now add the duration of the period, a user would like to visualize the data for. We can add this by doing the following:
+
+```{r, eval=FALSE}
+shinyApp(
+    ui=fluidPage(
+        pageWithSidebar(
+            headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
+            sidebarPanel(
+                checkboxGroupInput("countries", label = h3("Countries"), 
+                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
+                                   selected = 1),
+                h3("Duration"),
+                fluidRow(
+                    column(6,style=list("padding-right: 5px;"),
+                           dateInput("in_duration_date_start","From",value="2020-02-15")
+                    ),
+                    column(6,style=list("padding-left: 5px;"),
+                           dateInput("in_duration_date_end","To",value="2021-07-25")
+                    )
+                )
+            ),
+            mainPanel())
+    ),
+    server=function(input,output){}
+)
+```
+
+![](assets/images/shiny-cov-sidebar2.png)
+
+We have defined a part of the side bar panel with a title **Duration**. `fluidRow()` is an html tag used to create rows. Above, in the side bar panel, a row is defined and two columns are defined inside. Each column is filled with date input widgets for start and end dates. We use the columns here to place date input widgets side by side. To place widgets one below the other, the columns can simply be removed.
+
+Now let us add the last part of the sidebar panel where we add `actionButtons` for us to be able to do `Update` and `Download`.
+
+```{r, eval = FALSE}
+shinyApp(
+    ui=fluidPage(
+        pageWithSidebar(
+            headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
+            sidebarPanel(
+                checkboxGroupInput("countries", label = h3("Countries"), 
+                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
+                                   selected = 1),
+                h3("Duration"),
+                fluidRow(
+                    column(6,style=list("padding-right: 5px;"),
+                           dateInput("in_duration_date_start","From",value="2020-02-15")
+                    ),
+                    column(6,style=list("padding-left: 5px;"),
+                           dateInput("in_duration_date_end","To",value="2021-07-25")
+                    )
+                ),
+                h3("Plot controls"),
+                fluidRow(
+                    column(6,style=list("padding-right: 5px;"),
+                           actionButton("update", "Update")
+                    ),
+                    column(6,style=list("padding-left: 5px;"),
+                           downloadButton('download', 'Download')
+                    ),
+                )
+            ),
+            mainPanel()
+            )
+    ),
+    server=function(input,output){}
+)
+
+```
+
+![](assets/images/shiny-cov-sidebar.png)
+
+Now we can finalize the `UI` part by adding the interface for the `plotOutput()`s. So basically we want two rows with two columns. We can add this by using `fluidRow()` as we have done before:
+
+```{r, eval = FALSE}
+shinyApp(
+    ui=fluidPage(
+        pageWithSidebar(
+            headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
+            sidebarPanel(
+                checkboxGroupInput("countries", label = h3("Countries"), 
+                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
+                                   selected = 1),
+                h3("Duration"),
+                fluidRow(
+                    column(6,style=list("padding-right: 5px;"),
+                           dateInput("in_duration_date_start","From",value="2020-02-15")
+                    ),
+                    column(6,style=list("padding-left: 5px;"),
+                           dateInput("in_duration_date_end","To",value="2021-07-25")
+                    )
+                ),
+                h3("Plot controls"),
+                fluidRow(
+                    column(6,style=list("padding-right: 5px;"),
+                           actionButton("update", "Update")
+                    ),
+                    column(6,style=list("padding-left: 5px;"),
+                           downloadButton('download', 'Download')
+                    ),
+                )
+            ),
+            mainPanel(
+                fluidRow(
+                    column(width = 6, plotOutput("casesPlot",  width="100%")),
+                    column(width = 6, plotOutput("hospitalPlot",  width="100%"))
+                ),
+                fluidRow(
+                    column(width = 6, plotOutput("fatalPlot",  width="100%")),
+                    column(width = 6, plotOutput("vaccinePlot",  width="100%"))
+                )
+            )
+            )
+    ),
+    server=function(input,output){}
+)
+```
+
+The `UI` is set for now! Now let us move-on to the server part and then eventually figure-out if we have to come back to the `UI` part again for changes!
 
 
 
