@@ -532,6 +532,8 @@ shinyApp(
 )
 ```
 
+![](assets/images/shiny-dirty-preview.png)
+
 Now let us make these plots look a little bit more prettier!
 
 ```{r, eval=FALSE}
