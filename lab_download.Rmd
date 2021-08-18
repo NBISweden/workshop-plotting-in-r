@@ -30,7 +30,7 @@ The following data will be used in the used for the exercises in this course. Th
 You can download all the files together [here](data/data.zip).
 Make a directory called `data` and `unzip` in that directory!
 
-If `ggplot_geneco_course` is the current working directory, the directory tree should look like this:
+If `workshop_on_plotting_in_R` is the current working directory, the directory tree should look like this:
 
 * <span style="color:blue">ggplot_geneco_course</span>
   + <span style="color:blue">data</span>
@@ -46,6 +46,7 @@ If `ggplot_geneco_course` is the current working directory, the directory tree s
     + Time_t6_vs_t0.txt
     + tree_env.tsv
     + tree_hmap.tsv
+    + shiny_app_data.csv
 
 You can find the information related to the important files below:
 
