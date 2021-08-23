@@ -29,7 +29,7 @@ These are absolutely necessary for the course, if you do not already have a work
 
 install.packages(c("ggplot2","tidyverse","ggmap","pheatmap","devtools","cowplot",
                    "reshape2", "dplyr", "wesanderson", "scales", "ggthemes", "ggrepel", 
-                   "ggpubr", "gridExtra", "gganimate", "shiny", "rsconnect", "shinythemes"), dep=TRUE)
+                   "ggpubr", "gridExtra", "gganimate", "shiny", "rsconnect", "shinythemes", "colourpicker"), dep=TRUE)
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
