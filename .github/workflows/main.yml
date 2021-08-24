@@ -12,7 +12,7 @@ jobs:
           - {os: ubuntu-18.04, r: '4.0.0'}
     runs-on: ${{ matrix.config.os }}
     env:
-      GITHUB_PAT: ${{ secrets.TOKEN }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@master
