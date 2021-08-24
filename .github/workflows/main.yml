@@ -11,6 +11,8 @@ jobs:
         config:
           - {os: ubuntu-18.04, r: '4.0.0'}
     runs-on: ${{ matrix.config.os }}
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@master
@@ -63,8 +65,8 @@ jobs:
           Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_cran_student)) install.packages(yaml::read_yaml("_site.yml")$packages$packages_cran_student)'
           Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_bioc_repo)) BiocManager::install(as.character(yaml::read_yaml("_site.yml")$packages$packages_bioc_repo))'
           Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_bioc_student)) BiocManager::install(as.character(yaml::read_yaml("_site.yml")$packages$packages_bioc_student))'
-          Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_github_repo)) devtools::install_github(yaml::read_yaml("_site.yml")$packages$packages_github_repo)'
-          Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_github_student)) devtools::install_github(yaml::read_yaml("_site.yml")$packages$packages_github_student)'
+          Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_github_repo)) remotes::install_github(yaml::read_yaml("_site.yml")$packages$packages_github_repo)'
+          Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_github_student)) remotes::install_github(yaml::read_yaml("_site.yml")$packages$packages_github_student)'
           Rscript -e 'installed.packages()'
           echo "R directory size:"
           du -sh ${{ env.R_LIBS_USER }}
