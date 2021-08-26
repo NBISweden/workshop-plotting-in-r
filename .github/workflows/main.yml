@@ -11,8 +11,6 @@ jobs:
         config:
           - {os: ubuntu-18.04, r: '4.0.0'}
     runs-on: ${{ matrix.config.os }}
-    env:
-      GITHUB_PAT: ${{ secrets.Webpage }}
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@master
@@ -59,6 +57,8 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.config.r }}-${{ hashFiles('r-packages.txt') }}
       - name: Install R dependencies
         if: steps.cache-rp.outputs.cache-hit != 'true'
+        env:
+          GITHUB_PAT: ${{ secrets.Webpage }}
         run: |
           Rscript -e 'install.packages(c("yaml","pagedown"))'
           Rscript -e 'if(!is.null(yaml::read_yaml("_site.yml")$packages$packages_cran_repo)) install.packages(yaml::read_yaml("_site.yml")$packages$packages_cran_repo)'
@@ -91,7 +91,7 @@ jobs:
           ls -lh ${path_repo}/${path_export}
 
           # Clone gh-pages branch
-          git clone --single-branch --branch gh-pages "https://${{ secrets.TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" tmprepo
+          git clone --single-branch --branch gh-pages "https://${{ secrets.Webpage }}@github.com/${GITHUB_REPOSITORY}.git" tmprepo
           cd tmprepo
           if [ -d $path_export ]; then
             echo "Directory ${path_export} already exists. Removing the directory."
