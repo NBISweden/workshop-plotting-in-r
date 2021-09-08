@@ -66,8 +66,7 @@ name: demo
 
 --
 
-* Masks and social-distancing
-* Coffe and tea breaks
+* Coffe breaks (15 minutes is fine?)
 * Webpage structure
 * Plots from drop-down
 * Times mentioned in schedule are **super** arbitrary

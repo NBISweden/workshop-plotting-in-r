@@ -73,7 +73,8 @@ name: scales-axis
 ```{r,fig.height=4,fig.width=5}
 p <- ggplot(iris)+
       geom_point(aes(x=Sepal.Length,
-                     y=Sepal.Width))
+                     y=Sepal.Width,
+                     color=Species))
 p
 ```
 ]
