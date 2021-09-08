@@ -295,7 +295,7 @@ ggplot(data=iris,mapping=aes(x=Petal.Length,y=Petal.Width))+
   scale_color_manual(values=c("red","blue","green"))
 ```
 
-<i class="fas fa-lightbulb"></i> Tip &nbsp; To specify manual colors, you could specify by their `names` or their `hexadecimal codes`. For example, you can choose the colors based on `names` from an online source like in this [cheatsheet](http://bc.bojanorama.pl/wp-content/uploads/2013/04/rcolorsheet.pdf) or you can use the `hexadecimal code` and choose it from a source like [here](https://htmlcolorcodes.com/). I personally prefer the `hexa` based options for manual colors.
+<i class="fas fa-lightbulb"></i> Tip &nbsp; To specify manual colors, you could specify by their `names` or their `hexadecimal codes`. For example, you can choose the colors based on `names` from an online source like in this [cheatsheet](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) or you can use the `hexadecimal code` and choose it from a source like [here](https://htmlcolorcodes.com/). I personally prefer the `hexa` based options for manual colors.
 
 ### Continuous colors
 
