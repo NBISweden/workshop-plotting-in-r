@@ -215,8 +215,6 @@ You can find more information about the R package [here](https://github.com/dkah
 * It also sets the axis scales, etc, in a nice way.
 * Once you have gotten your maps, you make a call with `ggmap()` much as you would with `ggplot()`
 
-Here we will try to see some of the important functions that this package provides and how we can use it display the findings in a nicer way. 
-
 The `ggmap()` related tutorials are just shown how to do it without the actual plots! You need to register an API with google to be able to do this! and follow the instructions below: 
 
 ## Discrete data
@@ -225,11 +223,11 @@ The `ggmap()` related tutorials are just shown how to do it without the actual p
 if (!requireNamespace("ggmap", quietly = TRUE)){
   install.packages("ggmap", dependencies = TRUE)
 }
+library(ggmap)
 register_google(<INSERT YOUR PERSONAL KEY HERE>)
 ```
 
 ```{r, warning=FALSE, message=FALSE}
-library(ggmap)
 sisquoc <- read.table("data/ggmap_data/sisquoc-points.txt", sep = "\t", header = TRUE)
 head(sisquoc)
 ```
@@ -241,7 +239,7 @@ Now that we have the zoom region we are after, we can get the map from "google" 
 
 <div class="instruction">
 
-<i class="fas fa-exclamation-circle"></i> Note &nbsp; To use Google maps, it is necessary to get an API key from [google](https://developers.google.com/maps/gmp-get-started) for your account and then register the API key in your R using the function `register_google()`
+<i class="fas fa-exclamation-circle"></i> Note &nbsp; To use Google maps, it is necessary to get an API key from [google](https://developers.google.com/maps/gmp-get-started) for your account and then register for an API key for example for a free trail. They might ask for your credit-card information! Then under `credentials` you should be able to find your API key and copy it.  Then after lpading `ggmap` package in your R, you should able to register the key using the function `register_google()`.
 
 </div>
 
@@ -257,16 +255,20 @@ sq_map2 <- get_map(location = as.array(ll_means),  maptype = "satellite", source
 ggmap(sq_map2) + geom_point(data = sisquoc, mapping = aes(x = lon, y = lat), color = "red") 
 ```
 
+![](assets/images/goog_map1.jpeg)
+
 In here, we just managed to get an average of all the latitudes and the longtiudes in our data points that would give a centroid value and grabbed the map around the centroid.
 
 Here we can also add some more information around these points
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
 ggmap(sq_map2) + 
-  geom_point(data = sisquoc, color = "red", size = 3) +
-  geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
+  geom_point(data = sisquoc, mapping = aes(x = lon, y = lat), color = "red", size = 3) +
+  geom_text(data = sisquoc, aes(x = lon, y = lat, label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
 
 ```
+
+![](assets/images/goog_map2.jpeg)
 
 How about if we use the “terrain” type of map:
 
@@ -274,9 +276,11 @@ How about if we use the “terrain” type of map:
 sq_map3 <- get_map(location = ll_means,  maptype = "terrain", source = "google", zoom = 15)
 
 ggmap(sq_map3) + 
-  geom_point(data = sisquoc, color = "red", size = 3) +
-  geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
+  geom_point(data = sisquoc, mapping = aes(x = lon, y = lat), color = "red", size = 3) +
+  geom_text(data = sisquoc, aes(x = lon, y = lat, label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
 ```
+
+![](assets/images/goog_map3.jpeg)
 
 ## Continous data
 
@@ -295,10 +299,12 @@ run_means <- sapply(run_df[1:2], mean)
 runmap1 <- get_map(location = run_means, maptype = "terrain", source = "google", zoom = 14)
 
 ggmap(runmap1) + 
-  geom_path(data = run_df, aes(color = elevation), size = 3, lineend = "round") + 
+  geom_path(data = run_df, aes(x = lon, y = lat, color = elevation), size = 3, lineend = "round") + 
   scale_color_gradientn(colours = rev(rainbow(7)))
 
 ```
+
+![](assets/images/goog_map4.jpeg)
 
 <i class="fas fa-exclamation-circle"></i> Note &nbsp; getting the right zoom and position for the map is sort of trial and error. You can go to google maps to figure out where the center should be (right click and choose “What’s here?” to get the lat-long of any point)
 
