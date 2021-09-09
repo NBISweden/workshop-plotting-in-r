@@ -96,6 +96,24 @@ Here, we look into building PCA plots with `ggplot`. We will also look into maki
 
 [<i class="fas fa-link"></i> <span class="large">PCA and Heatmap</span>](lab_pca_hmap.html)
 
+## Rshiny Part I
+
+Here, we get introduced to how to start writing a Rshiny code. So, naturally we start to play around with the `UI` mainly to see what kinds of different `UIs` that one can use.
+
+[<i class="fas fa-link"></i> <span class="large">Rshiny Part I</span>](lab_shiny1.html)
+
+## Rshiny Part II
+
+Here, we look into some of the important Rshiny functions that one can use in the `server` part of the shiny code like `reactivity`, `Error validation` and `Download` options in the server.
+
+[<i class="fas fa-link"></i> <span class="large">Rshiny Part II</span>](lab_shiny2.html)
+
+## Rshiny Covid App
+
+In this part, we learn how to write an app from scratch! So, we take the visualization of the covid data as an example from few countries that we would like to plot!
+
+[<i class="fas fa-link"></i> <span class="large">Rshiny Covid App</span>](lab_shiny3.html)
+
 # Optional exercises
 
 Below are specific exercises for people who are interested in specific topics.
