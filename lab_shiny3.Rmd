@@ -95,7 +95,7 @@ Now let us take a quick look at how to make one of these plots! The following co
 library(gganimate)
 library(ggplot2)
 
-cov_data <- read.table("shiny_app_data.csv", sep = ",", header = T)
+cov_data <- read.table("data/shiny_app_data.csv", sep = ",", header = T)
 cov_data$date <- as.Date(cov_data$date)
 
 cov_data %>%
@@ -122,7 +122,7 @@ library(ggplot2)
 library(dplyr)
 library(cowplot)
 
-cov_data <- read.table("shiny_app_data.csv", sep = ",", header = T)
+cov_data <- read.table("data/shiny_app_data.csv", sep = ",", header = T)
 cov_data$date <- as.Date(cov_data$date)
 ```
 
@@ -141,7 +141,7 @@ library(ggplot2)
 library(dplyr)
 library(cowplot)
 
-cov_data <- read.table("shiny_app_data.csv", sep = ",", header = T)
+cov_data <- read.table("data/shiny_app_data.csv", sep = ",", header = T)
 cov_data$date <- as.Date(cov_data$date)
 
 
@@ -424,7 +424,7 @@ library(ggplot2)
 library(dplyr)
 library(cowplot)
 
-cov_data <- read.table("shiny_app_data.csv", sep = ",", header = T)
+cov_data <- read.table("data/shiny_app_data.csv", sep = ",", header = T)
 cov_data$date <- as.Date(cov_data$date)
 
 valfn_country <- function(x) if(is.null(x) | is.na(x) | x=="") return("You must select at-least one country")
