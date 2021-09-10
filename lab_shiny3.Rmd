@@ -169,8 +169,8 @@ shinyApp(
             headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
             sidebarPanel(
                 checkboxGroupInput("countries", label = h3("Countries"), 
-                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
-                                   selected = 1),
+                                   choices = list("France" = "France", "Germany" = "Germany", "India" = "India", "Sweden" = "Sweden", "UK" = "UK", "USA" = "USA"),
+                                   selected = "USA"),
             ),
             mainPanel())
     ),
@@ -189,8 +189,8 @@ shinyApp(
             headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
             sidebarPanel(
                 checkboxGroupInput("countries", label = h3("Countries"), 
-                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
-                                   selected = 1),
+                                   choices = list("France" = "France", "Germany" = "Germany", "India" = "India", "Sweden" = "Sweden", "UK" = "UK", "USA" = "USA"),
+                                   selected = "USA"),
                 h3("Duration"),
                 fluidRow(
                     column(6,style=list("padding-right: 5px;"),
@@ -220,8 +220,8 @@ shinyApp(
             headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
             sidebarPanel(
                 checkboxGroupInput("countries", label = h3("Countries"), 
-                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
-                                   selected = 1),
+                                   choices = list("France" = "France", "Germany" = "Germany", "India" = "India", "Sweden" = "Sweden", "UK" = "UK", "USA" = "USA"),
+                                   selected = "USA"),
                 h3("Duration"),
                 fluidRow(
                     column(6,style=list("padding-right: 5px;"),
@@ -260,8 +260,8 @@ shinyApp(
             headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
             sidebarPanel(
                 checkboxGroupInput("countries", label = h3("Countries"), 
-                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
-                                   selected = 1),
+                                   choices = list("France" = "France", "Germany" = "Germany", "India" = "India", "Sweden" = "Sweden", "UK" = "UK", "USA" = "USA"),
+                                   selected = "USA"),
                 h3("Duration"),
                 fluidRow(
                     column(6,style=list("padding-right: 5px;"),
@@ -313,8 +313,8 @@ As I have mentioned before, we have two inputs from the user and let us start wi
             headerPanel(title="Personalized Visualization of the SARS-Cov-II Pandemic",windowTitle="Covid Data"),
             sidebarPanel(
                 checkboxGroupInput("countries", label = h3("Countries"), 
-                                   choices = list("France" = 1, "Germany" = 2, "India" = 3, "Sweden" = 4, "UK" = 5, "USA" = 6),
-                                   selected = 1),
+                                   choices = list("France" = "France", "Germany" = "Germany", "India" = "India", "Sweden" = "Sweden", "UK" = "UK", "USA" = "USA"),
+                                   selected = "USA"),
                 conditionalPanel(condition = "input.countries == ''",
                                  textOutput('error_country')),
                 h3("Duration"),
