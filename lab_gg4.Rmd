@@ -39,7 +39,7 @@ library(ggplot2)
 library(reshape2)
 data("iris")
 gc <- read.table("data/counts_raw.txt", header = T, row.names = 1, sep = "\t")
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 rownames(md) <- md$Sample_ID
 
 library(tidyverse)

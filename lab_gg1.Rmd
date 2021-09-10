@@ -214,7 +214,7 @@ Let's also try to use `ggplot` for a "more common" gene counts dataset. Let's us
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(reshape2)
 gc <- read.table("data/counts_raw.txt", header = T, row.names = 1, sep = "\t")
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 rownames(md) <- md$Sample_ID
 
 #merging gene counts table with metadata

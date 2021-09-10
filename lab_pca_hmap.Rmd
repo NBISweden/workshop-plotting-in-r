@@ -35,7 +35,7 @@ library(dplyr)
 library(ggplot2)
 library(reshape2)
 data("iris")
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 rownames(md) <- md$Sample_ID
 
 library(tidyverse)

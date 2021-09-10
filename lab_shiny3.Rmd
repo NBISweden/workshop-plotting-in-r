@@ -94,6 +94,10 @@ Now let us take a quick look at how to make one of these plots! The following co
 ```{r, eval=FALSE}
 library(gganimate)
 library(ggplot2)
+
+cov_data <- read.table("shiny_app_data.csv", sep = ",", header = T)
+cov_data$date <- as.Date(cov_data$date)
+
 cov_data %>%
   ggplot(aes(x= date, y=new_cases_per_million, group = location, color = location)) +
   geom_line() +
