@@ -44,7 +44,7 @@ If you would like to keep the data tree same as the exercises here, you can extr
     + counts_raw.txt
     + counts_vst.txt
     + human_biomaRt_annotation.csv
-    + metadata_raw.csv
+    + metadata.csv
     + Time_t24_vs_t0.txt
     + Time_t2_vs_t0.txt
     + Time_t6_vs_t0.txt

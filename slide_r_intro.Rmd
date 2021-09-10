@@ -130,7 +130,7 @@ name: data-2
 
 
 ```{r echo=FALSE}
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 samples <- colnames(gc[,c(1:4)])
 gc[c(1:6),c(1:4)] %>%
   rownames_to_column(var = "Gene") %>%
@@ -148,7 +148,7 @@ gc[c(1:6),c(1:4)] %>%
 
 
 ```{r echo=FALSE}
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 samples <- colnames(gc[,c(1:4)])
 gc[c(1:6),c(1:4)] %>%
   rownames_to_column(var = "Gene") %>%
@@ -172,7 +172,7 @@ name: data-3
 - Long format
 
 ```{r echo=FALSE}
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 samples <- colnames(gc[,c(1:4)])
 gc[c(1:6),c(1:4)] %>%
   rownames_to_column(var = "Gene") %>%

@@ -169,7 +169,7 @@ And we usually have our metadata related to the samples in another table like be
 **Metadata Table**
 
 ```{r, echo=FALSE}
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 kable(md[c(1:4),]) %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
 ```
@@ -276,7 +276,7 @@ By using the `melt()` function from the **reshape2** package we can convert the 
 ```{r}
 library(reshape2)
 gc <- read.table("data/counts_raw.txt", header = T, row.names = 1, sep = "\t")
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 rownames(md) <- md$Sample_ID
 
 #merging gene counts table with metadata

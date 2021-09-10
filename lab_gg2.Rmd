@@ -263,7 +263,7 @@ gc_raw <- read.table(file = "data/counts_raw.txt", sep = "\t", header = T)
 gc_filt <- read.table(file = "data/counts_filtered.txt", sep = "\t", header = T)
 gc_vst <- read.table(file = "data/counts_vst.txt", sep = "\t", header = T)
 gc_deseq <- read.table(file = "data/counts_deseq2.txt", sep = "\t", header = T)
-md <- read.table("data/metadata_raw.csv", header = T, sep = ";")
+md <- read.table("data/metadata.csv", header = T, sep = ";")
 
 gene_counts_all <- 
   gc_raw %>% gather(Sample_ID, Raw, -Gene) %>%
