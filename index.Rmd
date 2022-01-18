@@ -25,7 +25,9 @@ output:
 </div>
 
 <p class="large" style="line-height:150%;margin-bottom:30px;color:red">
-This course has been renamed to **Data Visualization in R** and all the futre versions of the course can be found in page **[here](https://nbisweden.github.io/workshop-data-visualization-r/)**
+This course has been renamed to **Data Visualization in R**,
+ and all the future versions of the course can be found in page:
+ **[here](https://nbisweden.github.io/workshop-data-visualization-r/)**
 </p>
 
 <div class="col-md-12 flex-box">
